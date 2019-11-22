@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import HouseForm from '../shared/HouseForm'
-import { getHouseById, updateHouse } from '../../api/houses'
+import { getHouseById, updateHouseById } from '../../api/houses'
 
 class HouseEdit extends Component {
 	constructor(props) {
@@ -20,7 +20,7 @@ class HouseEdit extends Component {
 	async componentDidMount() {
 		try {
 			const house = await getHouseById(this.props.match.params.id)
-			this.setState({ item })
+			this.setState({ house })
 		} catch (err) {
 			console.error(err)
 		}
@@ -37,7 +37,7 @@ class HouseEdit extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault()
 
-		updateHouse(this.props.match.params.id)
+		updateHouseById(this.props.match.params.id)
 			.then(() => this.setState({ updated: true }))
 			.catch(console.error)
 	}

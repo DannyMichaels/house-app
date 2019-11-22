@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import Layout from '../shared/Layout'
-import { getHouseById, deleteHouse } from '../../api/houses'
+import { getHouseById, deleteHouseById } from '../../api/houses'
 
 class House extends Component {
 	constructor(props) {
@@ -23,7 +23,7 @@ class House extends Component {
 	}
 
 	destroy = () => {
-		deleteHouse(this.state.house.id)
+		deleteHouseById(this.state.house.id)
 			.then(() => this.setState({ deleted: true }))
 			.catch(console.error)
 	}

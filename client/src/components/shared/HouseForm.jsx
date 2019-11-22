@@ -1,7 +1,7 @@
 import React from 'react'
 
 const HouseForm = ({
-	item,
+	house,
 	handleSubmit,
 	handleChange,
 	cancelPath,

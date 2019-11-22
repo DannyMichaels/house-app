@@ -10,8 +10,8 @@ import AuthenticatedRoute from './routes/AuthenticatedRoute'
 import House from './routes/House'
 import Houses from './routes/Houses'
 import HouseCreate from './routes/HouseCreate'
-import HouseEdit from './routes/ItemEdit'
-import { getHouses } from '../services/houses'
+import HouseEdit from './routes/HouseEdit'
+import { getAllHouses } from '../api/houses'
 
 export default class Container extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ export default class Container extends Component {
 
     async componentDidMount() {
         try {
-            const houses = await getHouses()
+            const houses = await getAllHouses()
             this.setState({ houses })
         } catch (err) {
             console.error(err)

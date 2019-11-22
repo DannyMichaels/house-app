@@ -43,7 +43,7 @@ export default function Houses(props) {
 			<div className='landing'>
 				<h2>Welcome to the House App!</h2>
 				<div className='main'>
-					{!items ? <h3>No Houses at this time.</h3> : null}
+					{!houses ? <h3>No Houses at this time.</h3> : null}
 					<div className='item-container'>{renderHouses()}</div>
 				</div>
 			</div>

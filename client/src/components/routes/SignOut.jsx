@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { signOut } from '../../services/auth'
+import { signOut } from '../../api/auth'
 
 class SignOut extends Component {
 	componentDidMount() {

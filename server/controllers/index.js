@@ -33,13 +33,11 @@ const signUp = async (req, res) => {
 
 const signIn = async (req, res) => {
 	try {
-		const { username, password } = req.body
+        const { username, password } = req.body
 		const user = await User.findOne({
-			where: {
-				username
-			}
-		})
-		if (await bcrypt.compare(password, user.dataValues.password_digest)) {
+			username: username
+        })
+		if (await bcrypt.compare(password, user.password_digest)) {
 			const payload = {
 				id: user.id,
 				username: user.username,
