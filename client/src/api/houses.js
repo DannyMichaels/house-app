@@ -7,6 +7,12 @@ export const getAllHouses = async () => {
     return response.data.data
 }
 
-export const updateHouseById = async (id, payload) => await api.put(`/houses/${id}`, payload)
+export const updateHouseById = async (id, payload) => {
+    await console.log(id, payload)
+    await api.put(`/houses/${id}`, payload)
+}
 export const deleteHouseById = async (id) => await api.delete(`/houses/${id}`)
-export const getHouseById = async (id) => await api.get(`/houses/${id}`)
+export const getHouseById = async (id) => {
+    const response = await api.get(`/houses/${id}`)
+    return response.data.data
+}

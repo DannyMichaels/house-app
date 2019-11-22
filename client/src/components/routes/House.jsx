@@ -23,7 +23,7 @@ class House extends Component {
 	}
 
 	destroy = () => {
-		deleteHouseById(this.state.house.id)
+		deleteHouseById(this.state.house._id)
 			.then(() => this.setState({ deleted: true }))
 			.catch(console.error)
 	}

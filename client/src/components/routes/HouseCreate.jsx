@@ -21,7 +21,7 @@ class HouseCreate extends Component {
 	handleChange = (event) => {
 		const updatedField = { [event.target.name]: event.target.value }
 
-		const editedItem = Object.assign(this.state.item, updatedField)
+		const editedItem = Object.assign(this.state.house, updatedField)
 
 		this.setState({ item: editedItem })
 	}
@@ -32,7 +32,7 @@ class HouseCreate extends Component {
 		createHouse(this.state.house)
 			.then((res) =>
 				res.status === 201
-					? this.setState({ createdHouse: res.data.house })
+					? this.setState({ createdHouse: res.data.id })
 					: null
 			)
 			.catch(console.error)

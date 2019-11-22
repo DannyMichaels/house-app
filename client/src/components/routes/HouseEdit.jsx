@@ -37,7 +37,7 @@ class HouseEdit extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault()
 
-		updateHouseById(this.props.match.params.id)
+		updateHouseById(this.props.match.params.id, this.state.house)
 			.then(() => this.setState({ updated: true }))
 			.catch(console.error)
 	}

@@ -18,7 +18,7 @@ export default class Container extends Component {
         super(props)
         this.state = {
             user: null,
-            items: []
+            houses: []
         }
     }
 
@@ -31,7 +31,7 @@ export default class Container extends Component {
         }
     }
 
-    addItem = (house) => this.setState({ houses: [...this.state.houses, house] })
+    addHouse = (house) => this.setState({ houses: [...this.state.houses, house] })
 
     setUser = (user) => this.setState({ user })
 
