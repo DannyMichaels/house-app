@@ -152,7 +152,7 @@ getHouseById = async (req, res) => {
                 .status(404)
                 .json({ success: false, error: `House not found` })
         }
-        return res.status(200).json({ success: true, data: movie })
+        return res.status(200).json({ success: true, data: house })
     }).catch(err => console.log(err))
 }
 

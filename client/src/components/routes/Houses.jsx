@@ -19,9 +19,11 @@ export default function Houses(props) {
 		if (houses) {
 			return houses.map((house) => {
 				return (
-					<div className='item' key={house.id}>
+					<div className='item' key={house._id}>
 						<h4>{house.title}</h4>
-						{renderButton(house.id)}
+						<p>{ house.address }</p>
+						<p>{ house.price }</p>
+						{renderButton(house._id)}
 					</div>
 				)
 			})
